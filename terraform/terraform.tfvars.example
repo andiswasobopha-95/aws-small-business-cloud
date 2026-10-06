@@ -1,0 +1,5 @@
+aws_region          = "af-south-1"
+website_bucket_name = "your-unique-website-bucket-name"
+backup_bucket_name  = "your-unique-backup-bucket-name"
+alert_email         = "you@example.com"
+billing_threshold   = 10
