@@ -173,3 +173,5 @@ Buckets must be emptied before Terraform can delete them; the script is meant to
 ## 10. What I learned
 
 TODO: write 4-5 honest sentences in your own words, covering what was hard, what surprised you, and what you'd do differently.
+VERIFICATION CODE-
+WTC-C75CTTTF
