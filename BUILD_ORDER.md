@@ -1,30 +1,29 @@
 # Build order (tick as you go)
 
+Details for each step are in `docs/console-guide.md`. Write down what you did and take a screenshot as you go.
+
 ## Setup
 - [ ] 1. AWS account safety: MFA on root, an IAM admin user for daily use (not root)
-- [ ] 2. Enable billing alerts in the AWS account settings
-- [ ] 3. Install the AWS CLI and Terraform; run `aws configure`; check with `aws sts get-caller-identity`
+- [ ] 2. Install the AWS CLI; run `aws configure`; check with `aws sts get-caller-identity`
 
 ## Part A: Website
-- [ ] 4. Write a simple page in `site/`
-- [ ] 5. Terraform: private website bucket + public access block
-- [ ] 6. Terraform: CloudFront distribution with Origin Access Control
-- [ ] 7. Terraform: bucket policy so only CloudFront can read the bucket
-- [ ] 8. `terraform apply`, upload the site, open the CloudFront URL
+- [ ] 3. Write a simple page in `site/`
+- [ ] 4. Create a private S3 bucket for the website and upload the files
+- [ ] 5. Create a CloudFront distribution pointing at the bucket (with Origin Access Control)
+- [ ] 6. Apply the bucket policy CloudFront gives you; open the CloudFront URL
 
 ## Part B: Backups
-- [ ] 9. Terraform: backup bucket (public access block, encryption, versioning)
-- [ ] 10. Terraform: lifecycle rule for older backups
-- [ ] 11. Terraform: IAM user/policy that can upload but NOT delete
-- [ ] 12. Write `scripts/backup.sh` and test it with FAKE files in `sample-data/`
-- [ ] 13. Overwrite a file and practise restoring the old version (write `docs/restore-guide.md`)
+- [ ] 7. Create a second S3 bucket for backups (block public access, versioning on)
+- [ ] 8. Add a lifecycle rule for older backups
+- [ ] 9. Create an IAM user that can upload but NOT delete
+- [ ] 10. Write `scripts/backup.sh`, test it with FAKE files in `sample-data/`
+- [ ] 11. Overwrite a file and practise restoring the old version
 
 ## Part C: Safety net
-- [ ] 14. Terraform: SNS topic + email subscription (confirm the email!)
-- [ ] 15. Terraform: billing alarm
+- [ ] 12. Create an AWS Budget with an email alert
 
 ## Finish
-- [ ] 16. Fill in `docs/`, screenshots and the README TODOs
-- [ ] 17. Run the teardown script and check the AWS console for leftovers
+- [ ] 13. Fill in `docs/`, screenshots and the README TODOs
+- [ ] 14. Clean up and check the console for leftovers
 
-Tip: do Part A completely before starting Part B. A finished Part A alone is already a demo-able project.
+Tip: finish Part A completely before Part B. Part A alone is already a demo-able project.
