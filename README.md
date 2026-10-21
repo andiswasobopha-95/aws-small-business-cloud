@@ -184,3 +184,5 @@ WTC-C75CTTTF
 
 ### Custom error page
 ![Custom error page served by CloudFront](docs/screenshots/part-a-error-page.png)
+### Backup bucket lifecycle rule
+![Lifecycle rule on the backup bucket](docs/screenshots/part-b-lifecycle-rule.png)
