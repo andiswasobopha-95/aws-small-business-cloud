@@ -189,3 +189,9 @@ WTC-C75CTTTF
 
 ### Backup user policy: deletes are denied
 ![Policy permissions showing the explicit delete deny](docs/screenshots/part-b-policy-permissions.png)
+
+### Backup bucket versioning: both versions of a file are kept
+![Two versions of test-order.txt in the backup bucket](docs/screenshots/part-b-versions.png)
+
+### Budget alert
+![Monthly budget with email alerts](docs/screenshots/part-c-budget.png)
